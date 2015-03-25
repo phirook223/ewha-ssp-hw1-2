@@ -5,6 +5,7 @@
 
 #define REAR_LED_PIN 9
 #define DUTY_CYCLE 20
+#define TIME 10000
 
 int percent = 100;
 
@@ -38,12 +39,11 @@ void setup()
 void loop()
 {
 //Add your repeated code here
-	int time = 2000;
+	int time = TIME/100;
 
 	myAnalogWrite(REAR_LED_PIN,percent,time);
-
-	if (percent!=0){
-		percent -=25;
+	if (percent !=0) {
+		percent--;
 	}
 
 }
